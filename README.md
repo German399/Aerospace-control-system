@@ -1,1 +1,1 @@
-within the framework of training at the Institute of Education and Science "Avionics" MSTU. N.E. Bauman
+Aerospace control system as part of training at the Institute of Information and Educational Center "Avionics" MSTU. N.E. Bauman
