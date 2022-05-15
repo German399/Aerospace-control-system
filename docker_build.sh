@@ -1,0 +1,1 @@
+docker build -t mskbo_build -f ./docker/mskbo_docker/dockerfile .

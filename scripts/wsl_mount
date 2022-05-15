@@ -1,0 +1,1 @@
+sudo mount -t drvfs C:\\Users\\Alex\\MSKBO /mnt/MSKBO

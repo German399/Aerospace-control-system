@@ -1,0 +1,6 @@
+#!/bin/sh
+#устанавливаем и запускаем
+#sudo rm build
+mkdir build_docker
+cd build_docker
+cmake ../ && make &&./MSKBOexec

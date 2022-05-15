@@ -1,0 +1,12 @@
+[
+  {
+    "DisplayName": "Button 1",
+    "Type": 1,
+    "InputDevice": {
+      "Id": "f2ae6640-778a-11eb-8001-444553540000" },
+    "Offset": 40,
+    "Value": 0.0,
+    "IsAxis": false,
+    "IsButton": true
+  }
+ ]

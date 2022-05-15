@@ -1,0 +1,17 @@
+
+FROM debian:stable-slim
+LABEL maintainer="ale5000@yandex.ru"
+#install redis
+RUN apt-get update -y&&apt-get upgrade -y&&apt-get install -y wget \
+#apt-utils\
+pkg-config \
+tcl \
+cmake&& cd ~ && wget http://download.redis.io/redis-stable.tar.gz && tar xvzf redis-stable.tar.gz && rm redis-stable.tar.gz && cd redis-stable && make && make install
+#&& make && make test && make install
+COPY redis.conf /usr/local/etc/redis/redis.conf
+CMD [ "redis-server", "/usr/local/etc/redis/redis.conf" ]
+#test redis - optional
+#after in 
+#RUN redis-server
+#build, config and install boost c++ lib
+#

@@ -1,0 +1,66 @@
+#for login_pdw_safety
+docker/mskbo_docker/dockerfile
+#cmakeignore
+CMakeLists.txt.user
+CMakeLists.txt
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+#ignore script to fetch pull data
+scripts/checkurls.sh
+data/logs/*
+#buildDirIgnore
+bin/
+doc/*
+build/*
+input_mskbo/wago/build/*
+include/
+#vscodeignore
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+scripts/registy.sh
+data/ref/refman20092021.docx
+dump.rdb
+.vscode/settings.json

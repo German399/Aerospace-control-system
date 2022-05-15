@@ -1,0 +1,5 @@
+list=$(sudo docker ps -a -q) && sudo docker stop $listl
+from su: docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)
+docker exec -it redis_mskbo_debian bash
+sudo docker system prune -all
+systemctl restart docker

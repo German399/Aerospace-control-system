@@ -1,0 +1,425 @@
+[
+  {
+    "InputDevice": "f2ae6640-778a-11eb-8001-444553540000",
+    "Name": "Button 1",
+    "Type": "Button",
+    "Value": 0.0,
+    "IsButton": true,
+    "IsAxis": false,
+    "Offset": 40.0
+  },
+  {
+    "InputDevice": "f2ae6640-778a-11eb-8001-444553540000",
+    "Name": "Button 2",
+    "Type": "Button",
+    "Value": 0.0,
+    "IsButton": true,
+    "IsAxis": false,
+    "Offset": 41.0
+  },
+  {
+    "InputDevice": "f2ae6640-778a-11eb-8001-444553540000",
+    "Name": "Button 3",
+    "Type": "Button",
+    "Value": 0.0,
+    "IsButton": true,
+    "IsAxis": false,
+    "Offset": 42.0
+  },
+  {
+    "InputDevice": "f2ae6640-778a-11eb-8001-444553540000",
+    "Name": "Button 4",
+    "Type": "Button",
+    "Value": 0.0,
+    "IsButton": true,
+    "IsAxis": false,
+    "Offset": 43.0
+  },
+  {
+    "InputDevice": "f2ae6640-778a-11eb-8001-444553540000",
+    "Name": "Button 5",
+    "Type": "Button",
+    "Value": 0.0,
+    "IsButton": true,
+    "IsAxis": false,
+    "Offset": 44.0
+  },
+  {
+    "InputDevice": "f2ae6640-778a-11eb-8001-444553540000",
+    "Name": "Button 6",
+    "Type": "Button",
+    "Value": 0.0,
+    "IsButton": true,
+    "IsAxis": false,
+    "Offset": 45.0
+  },
+  {
+    "InputDevice": "f2ae6640-778a-11eb-8001-444553540000",
+    "Name": "Button 7",
+    "Type": "Button",
+    "Value": 0.0,
+    "IsButton": true,
+    "IsAxis": false,
+    "Offset": 46.0
+  },
+  {
+    "InputDevice": "f2ae6640-778a-11eb-8001-444553540000",
+    "Name": "Button 8",
+    "Type": "Button",
+    "Value": 0.0,
+    "IsButton": true,
+    "IsAxis": false,
+    "Offset": 47.0
+  },
+  {
+    "InputDevice": "f2ae6640-778a-11eb-8001-444553540000",
+    "Name": "Button 9",
+    "Type": "Button",
+    "Value": 0.0,
+    "IsButton": true,
+    "IsAxis": false,
+    "Offset": 48.0
+  },
+  {
+    "InputDevice": "f2ae6640-778a-11eb-8001-444553540000",
+    "Name": "Button 10",
+    "Type": "Button",
+    "Value": 0.0,
+    "IsButton": true,
+    "IsAxis": false,
+    "Offset": 49.0
+  },
+  {
+    "InputDevice": "f2ae6640-778a-11eb-8001-444553540000",
+    "Name": "Button 11",
+    "Type": "Button",
+    "Value": 0.0,
+    "IsButton": true,
+    "IsAxis": false,
+    "Offset": 50.0
+  },
+  {
+    "InputDevice": "f2ae6640-778a-11eb-8001-444553540000",
+    "Name": "Button 12",
+    "Type": "Button",
+    "Value": 0.0,
+    "IsButton": true,
+    "IsAxis": false,
+    "Offset": 51.0
+  },
+  {
+    "InputDevice": "f2ae6640-778a-11eb-8001-444553540000",
+    "Name": "Button 13",
+    "Type": "Button",
+    "Value": 0.0,
+    "IsButton": true,
+    "IsAxis": false,
+    "Offset": 52.0
+  },
+  {
+    "InputDevice": "f2ae6640-778a-11eb-8001-444553540000",
+    "Name": "Button 14",
+    "Type": "Button",
+    "Value": 0.0,
+    "IsButton": true,
+    "IsAxis": false,
+    "Offset": 53.0
+  },
+  {
+    "InputDevice": "f2ae6640-778a-11eb-8001-444553540000",
+    "Name": "Button 15",
+    "Type": "Button",
+    "Value": 0.0,
+    "IsButton": true,
+    "IsAxis": false,
+    "Offset": 54.0
+  },
+  {
+    "InputDevice": "f2ae6640-778a-11eb-8001-444553540000",
+    "Name": "Button 16",
+    "Type": "Button",
+    "Value": 0.0,
+    "IsButton": true,
+    "IsAxis": false,
+    "Offset": 55.0
+  },
+  {
+    "InputDevice": "f2ae6640-778a-11eb-8001-444553540000",
+    "Name": "Button 17",
+    "Type": "Button",
+    "Value": 0.0,
+    "IsButton": true,
+    "IsAxis": false,
+    "Offset": 56.0
+  },
+  {
+    "InputDevice": "f2ae6640-778a-11eb-8001-444553540000",
+    "Name": "Button 18",
+    "Type": "Button",
+    "Value": 0.0,
+    "IsButton": true,
+    "IsAxis": false,
+    "Offset": 57.0
+  },
+  {
+    "InputDevice": "f2ae6640-778a-11eb-8001-444553540000",
+    "Name": "Button 19",
+    "Type": "Button",
+    "Value": 0.0,
+    "IsButton": true,
+    "IsAxis": false,
+    "Offset": 58.0
+  },
+  {
+    "InputDevice": "f2ae6640-778a-11eb-8001-444553540000",
+    "Name": "Button 20",
+    "Type": "Button",
+    "Value": 0.0,
+    "IsButton": true,
+    "IsAxis": false,
+    "Offset": 59.0
+  },
+  {
+    "InputDevice": "f2ae6640-778a-11eb-8001-444553540000",
+    "Name": "Button 21",
+    "Type": "Button",
+    "Value": 0.0,
+    "IsButton": true,
+    "IsAxis": false,
+    "Offset": 60.0
+  },
+  {
+    "InputDevice": "f2ae6640-778a-11eb-8001-444553540000",
+    "Name": "Button 22",
+    "Type": "Button",
+    "Value": 0.0,
+    "IsButton": true,
+    "IsAxis": false,
+    "Offset": 61.0
+  },
+  {
+    "InputDevice": "f2ae6640-778a-11eb-8001-444553540000",
+    "Name": "Button 23",
+    "Type": "Button",
+    "Value": 0.0,
+    "IsButton": true,
+    "IsAxis": false,
+    "Offset": 62.0
+  },
+  {
+    "InputDevice": "f2ae6640-778a-11eb-8001-444553540000",
+    "Name": "Button 24",
+    "Type": "Button",
+    "Value": 0.0,
+    "IsButton": true,
+    "IsAxis": false,
+    "Offset": 63.0
+  },
+  {
+    "InputDevice": "f2ae6640-778a-11eb-8001-444553540000",
+    "Name": "Button 25",
+    "Type": "Button",
+    "Value": 0.0,
+    "IsButton": true,
+    "IsAxis": false,
+    "Offset": 64.0
+  },
+  {
+    "InputDevice": "f2ae6640-778a-11eb-8001-444553540000",
+    "Name": "Button 26",
+    "Type": "Button",
+    "Value": 0.0,
+    "IsButton": true,
+    "IsAxis": false,
+    "Offset": 65.0
+  },
+  {
+    "InputDevice": "f2ae6640-778a-11eb-8001-444553540000",
+    "Name": "Button 27",
+    "Type": "Button",
+    "Value": 0.0,
+    "IsButton": true,
+    "IsAxis": false,
+    "Offset": 66.0
+  },
+  {
+    "InputDevice": "f2ae6640-778a-11eb-8001-444553540000",
+    "Name": "Button 28",
+    "Type": "Button",
+    "Value": 0.0,
+    "IsButton": true,
+    "IsAxis": false,
+    "Offset": 67.0
+  },
+  {
+    "InputDevice": "f2ae6640-778a-11eb-8001-444553540000",
+    "Name": "Button 29",
+    "Type": "Button",
+    "Value": 0.0,
+    "IsButton": true,
+    "IsAxis": false,
+    "Offset": 68.0
+  },
+  {
+    "InputDevice": "f2ae6640-778a-11eb-8001-444553540000",
+    "Name": "Button 30",
+    "Type": "Button",
+    "Value": 0.0,
+    "IsButton": true,
+    "IsAxis": false,
+    "Offset": 69.0
+  },
+  {
+    "InputDevice": "f2ae6640-778a-11eb-8001-444553540000",
+    "Name": "Button 31",
+    "Type": "Button",
+    "Value": 0.0,
+    "IsButton": true,
+    "IsAxis": false,
+    "Offset": 70.0
+  },
+  {
+    "InputDevice": "f2ae6640-778a-11eb-8001-444553540000",
+    "Name": "Button 32",
+    "Type": "Button",
+    "Value": 0.0,
+    "IsButton": true,
+    "IsAxis": false,
+    "Offset": 71.0
+  },
+  {
+    "InputDevice": "f2ae6640-778a-11eb-8001-444553540000",
+    "Name": "Button 33",
+    "Type": "Button",
+    "Value": 0.0,
+    "IsButton": true,
+    "IsAxis": false,
+    "Offset": 72.0
+  },
+  {
+    "InputDevice": "f2ae6640-778a-11eb-8001-444553540000",
+    "Name": "Button 34",
+    "Type": "Button",
+    "Value": 0.0,
+    "IsButton": true,
+    "IsAxis": false,
+    "Offset": 73.0
+  },
+  {
+    "InputDevice": "f2ae6640-778a-11eb-8001-444553540000",
+    "Name": "Движение вправо-влево",
+    "Type": "AxisX",
+    "Value": 0.0,
+    "IsButton": false,
+    "IsAxis": true,
+    "Offset": 36.0
+  },
+  {
+    "InputDevice": "f2ae6640-778a-11eb-8001-444553540000",
+    "Name": "Движение вверх-вниз",
+    "Type": "AxisX",
+    "Value": 1.0,
+    "IsButton": false,
+    "IsAxis": true,
+    "Offset": 32.0
+  },
+  {
+    "InputDevice": "f2ae6640-778a-11eb-8001-444553540000",
+    "Name": "Ось X",
+    "Type": "AxisX",
+    "Value": 0.50000762951094835,
+    "IsButton": false,
+    "IsAxis": true,
+    "Offset": 4.0
+  },
+  {
+    "InputDevice": "f2ae6640-778a-11eb-8001-444553540000",
+    "Name": "Ось Y",
+    "Type": "AxisY",
+    "Value": 0.49999237048905165,
+    "IsButton": false,
+    "IsAxis": true,
+    "Offset": 0.0
+  },
+  {
+    "InputDevice": "f2ae6640-778a-11eb-8001-444553540000",
+    "Name": "Ось Z",
+    "Type": "AxisZ",
+    "Value": 0.50000762951094835,
+    "IsButton": false,
+    "IsAxis": true,
+    "Offset": 24.0
+  },
+  {
+    "InputDevice": "f2ae6640-778a-11eb-8001-444553540000",
+    "Name": "Вращение вокруг оси X",
+    "Type": "AxisX",
+    "Value": 0.50000762951094835,
+    "IsButton": false,
+    "IsAxis": true,
+    "Offset": 20.0
+  },
+  {
+    "InputDevice": "f2ae6640-778a-11eb-8001-444553540000",
+    "Name": "Вращение вокруг оси Y",
+    "Type": "AxisY",
+    "Value": 0.49999237048905165,
+    "IsButton": false,
+    "IsAxis": true,
+    "Offset": 16.0
+  },
+  {
+    "InputDevice": "f2ae6640-778a-11eb-8001-444553540000",
+    "Name": "Вращение вокруг оси Z",
+    "Type": "AxisZ",
+    "Value": 0.50000762951094835,
+    "IsButton": false,
+    "IsAxis": true,
+    "Offset": 8.0
+  },
+  {
+    "InputDevice": "f2ae6640-778a-11eb-8001-444553540000",
+    "Name": "Ползунок",
+    "Type": "Slider",
+    "Value": 0.49999237048905165,
+    "IsButton": false,
+    "IsAxis": false,
+    "Offset": 12.0
+  },
+  {
+    "InputDevice": "f2ae6640-778a-11eb-8001-444553540000",
+    "Name": "DPad1 Up",
+    "Type": "Dpad",
+    "Value": 0.0,
+    "IsButton": false,
+    "IsAxis": false,
+    "Offset": 1000.0
+  },
+  {
+    "InputDevice": "f2ae6640-778a-11eb-8001-444553540000",
+    "Name": "DPad1 Down",
+    "Type": "Dpad",
+    "Value": 0.0,
+    "IsButton": false,
+    "IsAxis": false,
+    "Offset": 1001.0
+  },
+  {
+    "InputDevice": "f2ae6640-778a-11eb-8001-444553540000",
+    "Name": "DPad1 Left",
+    "Type": "Dpad",
+    "Value": 0.0,
+    "IsButton": false,
+    "IsAxis": false,
+    "Offset": 1002.0
+  },
+  {
+    "InputDevice": "f2ae6640-778a-11eb-8001-444553540000",
+    "Name": "DPad1 Right",
+    "Type": "Dpad",
+    "Value": 0.0,
+    "IsButton": false,
+    "IsAxis": false,
+    "Offset": 1003.0
+  }
+]

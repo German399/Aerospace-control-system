@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: cd wago_adapter && make .&&./MSKBOexec
+    ports:
+      - "6011:6011"
+      - "6021:6021"
+    networks:
+      app_net:
+        ipv4_address: 192.168.1.10
+
+networks:
+  app_net:
+    driver: bridge
+    ipam:
+      driver: default
+

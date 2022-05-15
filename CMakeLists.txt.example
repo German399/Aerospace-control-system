@@ -1,0 +1,191 @@
+#хороший курс по созданию cmake: https://hsf-training.github.io/hsf-training-cmake-webpage/
+cmake_minimum_required(VERSION 3.4.0) 
+project(mskbo VERSION 1.2)
+#one exe build
+set(SOURCE_EXE main.cxx udp_simple/udp.cxx db/db.cxx la/la.cxx sau/sau.cxx input_mskbo/input_mskbo.cxx vis/vis.cxx vis/sivo/sivo.cxx)
+#services standalone build
+set(LOG_EXE log/log_standalone_fromDB.cxx log/log.cxx db/db.cxx)
+set(TIMER_EXE timer/timer_standalone.cxx)
+#set(VIS.EXE vis/vis_standalone.cxx vis/vis.cxx)
+#multiexe build
+set(INPUT_MSKBO_EXE input_mskbo/input_mskbo_standalone.cxx input_mskbo/input_mskbo.cxx db/db.cxx)
+set(SAU_EXE sau/sau_standalone.cxx sau/sau.cxx db/db.cxx)
+set(LA_EXE la/la_standalone.cxx la/la.cxx db/db.cxx)
+set(KBO_EXE kbo/kbo_standalone.cxx kbo/kbo.cxx db/db.cxx)
+set(IUP_EXE iup_common/iup_standalone.cxx iup_common/iup.cxx db/db.cxx)
+set(MULTI_EXE multi_exe_build.cxx db/db.cxx)
+#for boost asio pthread
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
+#создать документацию в папке док
+# first we can indicate the documentation build as an option and set it to ON by default
+option(BUILD_DOC "Build documentation" ON)
+# check if Doxygen is installed
+find_package(Doxygen)
+#find_package(libreoffice-writer)
+if (DOXYGEN_FOUND)
+    # set input and output files
+    set(DOXYGEN_CONFIG ${CMAKE_CURRENT_SOURCE_DIR}/config/mskbo_doc_doxygen.conf)
+    set(DOXYGEN_RTF_PATH ${CMAKE_CURRENT_SOURCE_DIR}/doc/rtf/refman.rtf)
+    set(DOC_PATH ${CMAKE_CURRENT_SOURCE_DIR}/doc)  
+    #set(DOXYGEN_OUT ${CMAKE_CURRENT_SOURCE_DIR})
+
+    # note the option ALL which allows to build the docs together with the application
+    add_custom_target( doc_doxygen ALL
+        COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYGEN_CONFIG}
+        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        COMMENT "Создаем документацию"
+        VERBATIM
+        COMMAND soffice --headless --convert-to docx --outdir ${DOC_PATH} ${DOXYGEN_RTF_PATH}
+        COMMAND soffice --headless --convert-to pdf --outdir ${DOC_PATH} ${DOXYGEN_RTF_PATH}
+        )
+        # add_custom_target( view_rtf 
+        
+        # COMMAND soffice --headless --convert-to docx --outdir ${DOC_PATH} ${DOXYGEN_RTF_PATH}
+        
+        # )
+        #run after doc_doxygen $
+    
+    # add_custom_target( build_docx ALL
+    #   #add_custom_command(
+    #   #  COMMAND bash "apt-get list --installed | grep libreoffice-writer" 
+    #   #  OUTPUT_VARIABLE LIBREOFFICE_WRITER_INSTALLED
+    #   #)
+    #   #COMMAND echo ${LIBREOFFICE_WRITER_INSTALLED}
+      
+    #   else() 
+    #     message("Установите writer для создания документации в формате docx")
+    #   endif()
+    # )
+
+    #rtf_view_libreoffice
+    
+   # execute_process(
+   #   COMMAND "apt-get list --installed"
+   #   COMMAND "grep libreoffice-writer"
+   #   RESULT_VARIABLE 
+   #   COMMAND soffice ${DOXYGEN_RTF_PATH}
+   #   else() message("Установите writer для просмотра исходного файла в формате rtf")
+   #   endif()
+
+
+else (DOXYGEN_FOUND)
+  message("Установите doxygen для создания документации")
+endif (DOXYGEN_FOUND)
+#find_package(Boost 1.75.0)
+  #if(Boost_FOUND)
+    set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_LIST_DIR}/build)
+    #set(Boost_USE_STATIC_LIBS OFF)
+    #set(Boost_USE_MULTITHREADED ON)
+    #set(Boost_USE_STATIC_RUNTIME OFF)
+    #add_definitions( -DBOOST_ALL_NO_LIB )
+    #add_definitions( -DBOOST_ALL_DYN_LINK )   
+    include_directories(${Boost_INCLUDE_DIRS})
+   
+    add_executable(MSKBOexec ${SOURCE_EXE})	# Создает исполняемый файл
+    add_executable(MSKBOtimer ${TIMER_EXE})
+    add_executable(MSKBOlog ${LOG_EXE})
+    #add_executable(MSKBOvis ${VIS.EXE})
+    
+    add_executable(Input_MSKBOexec  ${INPUT_MSKBO_EXE}) 
+    add_executable(SAUexec ${SAU_EXE}) 
+    add_executable(LAexec ${LA_EXE})
+    add_executable(KBOexec ${KBO_EXE})
+    add_executable(IUPexec ${IUP_EXE})
+    add_executable(MSKBO_multi_exec ${MULTI_EXE})	# Создает исполняемый файл
+
+
+    target_link_libraries(MSKBOexec ${Boost_LIBRARIES})
+    include_directories(".")
+    include_directories(udp_simple)
+    include_directories(config)
+    #boost, требует запуска скрипта boost install в корневой директории проекта для успешной установки
+    set(BOOST_ROOT /usr/local)
+    set(Boost_USE_STATIC_LIBS ON)
+    find_package(Boost REQUIRED)
+
+    include_directories(${Boost_INCLUDE_DIR})
+    #add_executable(example example.cpp)
+    
+    #target_compile_options(asio INTERFACE ASIO_STANDALONE)
+    #target_include_directories(asio INTERFACE ${Boost_LIBRARIES})
+    #target_link_libraries(asio INTERFACE <threads>)  # Using ASIO requires you link your final executable/library with your system's threading library (e.g. pthread on linux)
+    # для работы требует выполнения скрипта hiredis_install.sh, который устанавливает библиотеку в систему
+    add_subdirectory (/home/mskbo-dev/hiredis/ hiredis)
+    #add_subdirectory (/home/alex/hiredis/ hiredis)
+    #add_subdirectory (${CMAKE_CURRENT_LIST_DIR}/hiredis/ hiredis)
+    #nlohman json
+    include(FetchContent)
+
+    FetchContent_Declare(json
+      GIT_REPOSITORY https://github.com/ArthurSonzogni/nlohmann_json_cmake_fetchcontent
+      GIT_TAG v3.7.3)
+
+    FetchContent_GetProperties(json)
+    if(NOT json_POPULATED)
+      FetchContent_Populate(json)
+      add_subdirectory(${json_SOURCE_DIR} ${json_BINARY_DIR} EXCLUDE_FROM_ALL)
+    endif()
+
+    find_package( Threads REQUIRED ) 
+    
+    target_link_libraries(MSKBO_multi_exec PRIVATE Threads::Threads )
+    target_link_libraries(MSKBO_multi_exec LINK_PUBLIC hiredis)
+    target_link_libraries(MSKBO_multi_exec PRIVATE nlohmann_json::nlohmann_json)
+    target_link_libraries(MSKBO_multi_exec ${Boost_SYSTEM_LIBRARY})
+    
+    target_link_libraries(MSKBOexec LINK_PUBLIC hiredis)
+    target_link_libraries(MSKBOexec PRIVATE nlohmann_json::nlohmann_json)
+    target_link_libraries(MSKBOexec ${Boost_SYSTEM_LIBRARY})
+
+    target_link_libraries(MSKBOtimer PRIVATE nlohmann_json::nlohmann_json)
+    target_link_libraries(MSKBOtimer ${Boost_SYSTEM_LIBRARY})
+    
+    target_link_libraries(MSKBOlog LINK_PUBLIC hiredis)
+    target_link_libraries(MSKBOlog PRIVATE nlohmann_json::nlohmann_json)
+    target_link_libraries(MSKBOlog ${Boost_SYSTEM_LIBRARY})
+
+    #target_link_libraries(MSKBOvis LINK_PUBLIC hiredis)
+    #target_link_libraries(MSKBOvis PRIVATE nlohmann_json::nlohmann_json)
+    #target_link_libraries(MSKBOvis ${Boost_SYSTEM_LIBRARY})
+
+    
+    target_link_libraries(Input_MSKBOexec LINK_PUBLIC hiredis)
+    target_link_libraries(Input_MSKBOexec PRIVATE nlohmann_json::nlohmann_json)
+    target_link_libraries(Input_MSKBOexec ${Boost_SYSTEM_LIBRARY})
+
+    target_link_libraries(SAUexec LINK_PUBLIC hiredis)
+    target_link_libraries(SAUexec PRIVATE nlohmann_json::nlohmann_json)
+    target_link_libraries(SAUexec ${Boost_SYSTEM_LIBRARY})
+
+    target_link_libraries(LAexec LINK_PUBLIC hiredis)
+    target_link_libraries(LAexec PRIVATE nlohmann_json::nlohmann_json)
+    target_link_libraries(LAexec ${Boost_SYSTEM_LIBRARY})
+
+    target_link_libraries(IUPexec LINK_PUBLIC hiredis)
+    target_link_libraries(IUPexec PRIVATE nlohmann_json::nlohmann_json)
+    target_link_libraries(IUPexec ${Boost_SYSTEM_LIBRARY})
+    
+  
+    target_link_libraries(KBOexec LINK_PUBLIC hiredis)
+    target_link_libraries(KBOexec PRIVATE nlohmann_json::nlohmann_json)
+    target_link_libraries(KBOexec ${Boost_SYSTEM_LIBRARY})
+
+
+    
+
+    
+
+
+#endif()
+
+
+
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/LAstruct.json
+    ${CMAKE_CURRENT_BINARY_DIR} COPYONLY)
+    
+    
+    
+
+
+
+

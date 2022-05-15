@@ -1,0 +1,7 @@
+#models
+set(INS_SOURCE MODELS/INS/ins_main.cxx MODELS/INS/ins_add.cxx db/db.cxx)
+#models exec
+add_executable(INS_exe ${INS_SOURCE})
+target_link_libraries(INS_exe PRIVATE Threads::Threads )
+target_link_libraries(INS_exe LINK_PUBLIC hiredis)
+target_link_libraries(INS_exe ${Boost_SYSTEM_LIBRARY})

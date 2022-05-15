@@ -1,0 +1,50 @@
+#FROM debian:stable-slim
+FROM jenkins/agent:latest
+LABEL version="0.2" maintainer="Shevadronov Alexander <ale5000@yandex.ru>"
+#make boost
+USER root
+RUN apt-get update -y&&apt-get upgrade -y&&apt-get install -y wget \
+#apt-get-utils\
+pkg-config \
+tcl \
+g++ \
+cmake
+RUN cd ~ && wget http://downloads.sourceforge.net/project/boost/boost/1.75.0/boost_1_75_0.tar.gz \
+  && tar xfz boost_1_75_0.tar.gz \
+  && rm boost_1_75_0.tar.gz \
+  && cd boost_1_75_0 \
+  && ./bootstrap.sh --prefix=/usr/local 
+RUN  cd /root/boost_1_75_0 && ./b2 --with-chrono --with-system --with-thread --with-date_time --with-regex --with-serialization stage install
+RUN apt-get install -y git && git clone https://github.com/redis/hiredis.git \
+&&cd hiredis \
+&& make \
+&& make install 
+#\ && make test
+#make texlive + doxygen to build docs
+#RUN apt-get install -y texlive-binaries
+#RUN echo "Europe/Moscow" > /etc/timezone && \
+#    dpkg-reconfigure tzdata && \
+#    apt-get -y update && \
+#    apt-get -y upgrade && \
+#    apt-get -y install \
+#        texlive-xetex \
+#        texlive-extra-utils \
+#        texlive-fonts-recommended \
+#       texlive-fonts-extra \
+#       texlive-latex-extra \
+#        texlive-latex-recommended \
+#        texlive-lang-english \
+#        texlive-lang-cyrillic
+
+RUN  apt-get install -y python3 flex bison graphviz &&git clone https://github.com/doxygen/doxygen.git
+RUN cd doxygen \
+&& cmake -G "Unix Makefiles" . \
+&& make \
+&& make install
+#RUN cd doxygen && cmake -Dbuild_doc=YES . && make docs
+#to build docs for mskbo use cmake -G "Unix Makefiles" .. &&
+#insert your gitlab login and password
+#RUN git clone 
+#RUN cd home/mskbo && chmod +x install
+#./home/mskbo/install
+#run this to start program
